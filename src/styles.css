@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~jsoneditor/dist/jsoneditor.min.css";
+
+app-home{
+    width: 100%;
+    height: 100vh;
+    display: block
+}
+
+app-header{
+    width: 100%;
+    height: 64px;
+    display: block
+}
+
+app-body{
+    width: 100%;
+    height: calc(100% - 64px);
+    display: block
+}
+
+app-json-container{
+    display: block;
+    margin-top: 10px;
+}
+
+.jsoneditor-poweredBy{
+    display: none;
+}
+
+div.jsoneditor-mode-code{
+    height:300px;
+}

@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <app-json-container [jsonComponent]="config1" (sendJsonConfig)="sendJsonConfig($event)"></app-json-container>    
+    </div>
+    <div class="col-12">
+      <app-json-container [jsonComponent]="config2" (sendJsonConfig)="sendJsonConfig($event)"></app-json-container>    
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="generateXML()">Guardar</button>
+</div>
