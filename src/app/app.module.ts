@@ -15,6 +15,7 @@ import { NameProjectComponent } from './components/steps/name-project/name-proje
 import { VariablesComponent } from './components/steps/variables/variables.component';
 import { ActivityComponent } from './components/steps/activity/activity.component';
 import { SelectedActivityComponent } from './components/jmeter/selected-activity/selected-activity.component';
+import { FileSaverModule } from 'ngx-filesaver';
 
 
 
@@ -36,6 +37,7 @@ import { SelectedActivityComponent } from './components/jmeter/selected-activity
   imports: [
     BrowserModule,
     FormsModule,
+    FileSaverModule,
     NgJsonEditorModule,
   ],
   providers: [],

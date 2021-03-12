@@ -3456,3 +3456,34 @@ java.lang.NullPointerException: null
 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
 2021-03-12 11:07:46,330 ERROR o.a.j.u.JMeterUtils: Unexpected error - see log for details
+2021-03-12 11:59:48,418 INFO o.a.j.g.a.Load: Loading file: /Users/everis/Downloads/jmeter.jmx
+2021-03-12 11:59:48,420 INFO o.a.j.s.FileServer: Set new base='/Users/everis/Downloads'
+2021-03-12 11:59:48,420 INFO o.a.j.s.SaveService: Loading file: /Users/everis/Downloads/jmeter.jmx
+2021-03-12 11:59:48,503 WARN o.a.j.g.a.Load: Unexpected error. java.lang.NullPointerException
+java.lang.NullPointerException: null
+	at java.util.ArrayDeque.addLast(ArrayDeque.java:303) ~[?:?]
+	at java.util.ArrayDeque.add(ArrayDeque.java:494) ~[?:?]
+	at org.apache.jmeter.gui.action.LoadRecentProject.updateRecentFileMenuItems(LoadRecentProject.java:125) ~[ApacheJMeter_core.jar:5.4]
+	at org.apache.jmeter.gui.util.JMeterMenuBar.setProjectFileLoaded(JMeterMenuBar.java:144) ~[ApacheJMeter_core.jar:5.4]
+	at org.apache.jmeter.gui.MainFrame.setProjectFileLoaded(MainFrame.java:330) ~[ApacheJMeter_core.jar:5.4]
+	at org.apache.jmeter.gui.GuiPackage.setTestPlanFile(GuiPackage.java:732) ~[ApacheJMeter_core.jar:5.4]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:136) ~[ApacheJMeter_core.jar:5.4]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:101) ~[ApacheJMeter_core.jar:5.4]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:88) ~[ApacheJMeter_core.jar:5.4]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.4]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:87) ~[ApacheJMeter_core.jar:5.4]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:69) ~[ApacheJMeter_core.jar:5.4]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:721) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:715) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:391) [?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85) [?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:740) [?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2021-03-12 11:59:48,508 ERROR o.a.j.u.JMeterUtils: Unexpected error - see log for details

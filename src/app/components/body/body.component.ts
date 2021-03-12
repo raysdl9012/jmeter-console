@@ -4,7 +4,8 @@ import { IJsonContainer } from 'src/app/interface/i.jsonContainer';
 import { IJsonContainerEmit } from 'src/app/interface/i.jsonContainer.emit';
 import { JMETER_FILE_CREATE_CONCURRENCE, JMETER_FILE_CREATE_THREAD_GROUP, JMETER_FILE, JMETER_FILE_VARIABLES, JMETER_HEADER } from 'src/app/models/m.jmeter';
 import { JmeterService } from 'src/app/services/jmeter.service';
-
+import { FileSaverOptions } from "file-saver";
+import { FileSaverService } from 'ngx-filesaver';
 
 
 @Component({
@@ -16,7 +17,9 @@ export class BodyComponent implements OnInit {
 
   public selectedActivity = false
 
-  constructor(private jmx_service:JmeterService) {
+  constructor(
+    private jmx_service:JmeterService,
+    private _FileSaverService: FileSaverService) {
 
   }
 
@@ -28,6 +31,7 @@ export class BodyComponent implements OnInit {
     const config = this.jmx_service.getJmeterConfig();
     const xml = JMETER_FILE(config);
     console.log(xml);
+    this._FileSaverService.save(new Blob([xml]),'jmeter.jmx')
     
   }
 }
