@@ -1,0 +1,24 @@
+<div *ngIf="threadGroupConfig">
+  <div class="mb-3">
+    <label for="threadGroupName" class="form-label">Nombre de la prueba</label>
+    <input type="text" placeholder="Ingrese un valor" [(ngModel)]="threadGroupConfig.name" class="form-control"
+      id="threadGroupName" [ngModelOptions]="{standalone: true}" aria-describedby="name jmeter">
+  </div>
+  <div class="mb-3">
+    <label for="targetLevel" class="form-label">Number of threads</label>
+    <input type="number" placeholder="Ingrese un valor" [(ngModel)]="threadGroupConfig.numberThreads"
+      class="form-control" id="targetLevel" [ngModelOptions]="{standalone: true}" aria-describedby="name jmeter">
+  </div>
+  <div class="mb-3">
+    <label for="RampUp" class="form-label">Ramp up period (seconds)</label>
+    <input type="number" placeholder="Ingrese un valor" [(ngModel)]="threadGroupConfig.rampUp" class="form-control"
+      id="RampUp" [ngModelOptions]="{standalone: true}" aria-describedby="name jmeter">
+  </div>
+  <div class="mb-3">
+    <label for="steps" class="form-label">Loop</label>
+    <input type="number" placeholder="Ingrese un valor" [(ngModel)]="threadGroupConfig.loop" class="form-control"
+      id="steps" [ngModelOptions]="{standalone: true}" aria-describedby="name jmeter">
+  </div>
+
+</div>
+<button type="button" (click)="saveConfig()" class="btn btn-primary">Guardar</button>

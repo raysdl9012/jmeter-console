@@ -1,0 +1,26 @@
+.btn-margin{
+  margin: 5px;
+  width: 100px;
+  margin-left: calc(100% - 100px);
+}
+
+.btn-width{
+  width: 85px;
+}
+
+.card{
+  padding: 10px 20px;
+}
+
+.config-close{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: none;
+}
+
+svg{
+  height: 38px;
+  fill: rgb(133, 24, 24);
+  cursor: pointer;
+}

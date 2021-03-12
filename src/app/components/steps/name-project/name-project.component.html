@@ -1,0 +1,10 @@
+<h2>1. Seleccionar Nombre del proyecto</h2>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In iusto deserunt veniam, facilis eius dicta molestiae odit illo sed assumenda vitae dolor quod perspiciatis hic eveniet dolore corporis cumque eaque.</p>
+<div class="card">
+  <div class="mb-3">
+    <label for="titleJMeter" class="form-label">Nombre del proyecto</label>
+    <input type="text" [(ngModel)]="nameProject" class="form-control" id="titleJMeter"
+      placeholder="Ingrese en nombre del proyecto" [ngModelOptions]="{standalone: true}" aria-describedby="name jmeter">
+  </div>
+  <button type="button" (click)="saveConfig()" class="btn btn-primary">Guardar</button>
+</div>

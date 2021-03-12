@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4">
+    <hashTree>
+      <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="casdfasd" enabled="true">
+        <stringProp name="TestPlan.comments"></stringProp>
+        <boolProp name="TestPlan.functional_mode">false</boolProp>
+        <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+        <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+        <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+    <collectionProp name="Arguments.arguments">
+      <elementProp name="VARIABLE" elementType="Argument">
+      <stringProp name="Argument.name">a</stringProp>
+      <stringProp name="Argument.value">a</stringProp>
+      <stringProp name="Argument.metadata">=</stringProp>
+    </elementProp><elementProp name="VARIABLE" elementType="Argument">
+      <stringProp name="Argument.name">b</stringProp>
+      <stringProp name="Argument.value">b</stringProp>
+      <stringProp name="Argument.metadata">=</stringProp>
+    </elementProp>
+    </collectionProp>
+  </elementProp>
+        <stringProp name="TestPlan.user_define_classpath"></stringProp>
+      </TestPlan>
+      <hashTree>
+    <com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup guiclass="com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroupGui" testclass="com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup" testname="Concurrencia" enabled="true">
+      <elementProp name="ThreadGroup.main_controller" elementType="com.blazemeter.jmeter.control.VirtualUserController"/>
+      <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      <stringProp name="TargetLevel">100</stringProp>
+      <stringProp name="RampUp">600</stringProp>
+      <stringProp name="Steps">10</stringProp>
+      <stringProp name="Hold">400</stringProp>
+      <stringProp name="LogFilename"></stringProp>
+      <stringProp name="Iterations"></stringProp>
+      <stringProp name="Unit">M</stringProp>
+    </com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup>
+    <hashTree/>
+  </hashTree>
+      </hashTree>
+    </hashTree>
+  </jmeterTestPlan>

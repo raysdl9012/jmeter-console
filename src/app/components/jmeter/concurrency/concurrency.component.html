@@ -1,0 +1,29 @@
+<div *ngIf="concurrencyConfig">
+  <div class="mb-3">
+    <label for="concurrencyName" class="form-label">Nombre de la prueba</label>
+    <input type="text" placeholder="Ingrese un valor" [(ngModel)]="concurrencyConfig.name" class="form-control"
+      id="concurrencyName" [ngModelOptions]="{standalone: true}" aria-describedby="name jmeter">
+  </div>
+  <div class="mb-3">
+    <label for="targetLevel" class="form-label">Target Concurrency</label>
+    <input type="number" placeholder="Ingrese un valor" [(ngModel)]="concurrencyConfig.targetLevel" class="form-control"
+      id="targetLevel" [ngModelOptions]="{standalone: true}" aria-describedby="name jmeter">
+  </div>
+  <div class="mb-3">
+    <label for="RampUp" class="form-label">Ramp up Time (seconds)</label>
+    <input type="number" placeholder="Ingrese un valor" [(ngModel)]="concurrencyConfig.rampUp" class="form-control"
+      id="RampUp" [ngModelOptions]="{standalone: true}" aria-describedby="name jmeter">
+  </div>
+  <div class="mb-3">
+    <label for="steps" class="form-label">Ramp-up Step count</label>
+    <input type="number" placeholder="Ingrese un valor" [(ngModel)]="concurrencyConfig.steps" class="form-control"
+      id="steps" [ngModelOptions]="{standalone: true}" aria-describedby="name jmeter">
+  </div>
+  <div class="mb-3">
+    <label for="hold" class="form-label">Hold Target Rate Time (seconds)</label>
+    <input type="number" placeholder="Ingrese un valor" [(ngModel)]="concurrencyConfig.hold" class="form-control"
+      id="hold" [ngModelOptions]="{standalone: true}" aria-describedby="name jmeter">
+  </div>
+</div>
+
+<button type="button" (click)="saveConfig()" class="btn btn-primary">Guardar</button>
