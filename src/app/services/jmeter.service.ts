@@ -6,6 +6,7 @@ import { IJmeterConfig } from '../interface/i.jmeterConfig';
 })
 export class JmeterService {
 
+  // Objeto que contiene todo lo seleccionado en las configuracion
   private jmeterConfig: IJmeterConfig = {};
 
   constructor() { 

@@ -1,3 +1,6 @@
+/**
+ * Archivo que contiene todas las porciones separadas del JMX para unirlas de acuerdo a la necesidad
+ */
 import { IConfigConcurrency, IConfigGlobalVariables, IConfigSamplerHTTP, IConfigThreadGroup, IJmeterConfig } from "../interface/i.jmeterConfig"
 
 export function JMETER_FILE(config: IJmeterConfig): string {

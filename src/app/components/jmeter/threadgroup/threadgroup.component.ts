@@ -8,15 +8,24 @@ import { IConfigThreadGroup } from 'src/app/interface/i.jmeterConfig';
 })
 export class ThreadgroupComponent implements OnInit {
 
-
+// Varaible de entrada del coponente
   @Input() concurrencyConfigInput?: IConfigThreadGroup;
+  // Señal de salida del componente
   @Output() sendData = new EventEmitter<IConfigThreadGroup>();
 
+  // Configuracion de un ThreadGroup
   public threadGroupConfig?: IConfigThreadGroup;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.loadInitialConfig();
+  }
+
+  /**
+   * Funcion que se encarga de cargar la configuracion inical para un threadgroup
+   */
+  private loadInitialConfig(){
     if (this.concurrencyConfigInput != undefined) {
       this.threadGroupConfig = this.concurrencyConfigInput
     } else {
@@ -30,9 +39,8 @@ export class ThreadgroupComponent implements OnInit {
     }
   }
 
+  // Guardar la configuracion de un threadGroup
   public saveConfig() {
     this.sendData.emit(this.threadGroupConfig);
   }
-
-
 }

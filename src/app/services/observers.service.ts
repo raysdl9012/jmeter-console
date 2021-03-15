@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class ObserversService {
 
+  // Evento que se genera para cambiar de step
   private changeStatusStep$: Subject<number> = new Subject<number>();
 
   constructor() { }

@@ -21,6 +21,10 @@ export class VariablesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Funcion que se encarga de guardar la aconfiguracion de las variables globales
+   * @param event xml generado de las varaibles globales
+   */
   public globalVariableData(event: any){
     const data = event as string;
     this.observer.setSignalChangeStatusSteps(2);

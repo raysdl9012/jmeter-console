@@ -9,7 +9,9 @@ import { IConfigConcurrency } from 'src/app/interface/i.jmeterConfig';
 export class ConcurrencyComponent implements OnInit {
 
 
+  // Varaible de entrada del coponente
   @Input() concurrencyConfigInput?: IConfigConcurrency;
+  // Señal de salida del componente
   @Output() sendData = new EventEmitter<IConfigConcurrency>();
 
   public concurrencyConfig?: IConfigConcurrency;
@@ -17,6 +19,14 @@ export class ConcurrencyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.managerInitConfig();
+  }
+
+  /**
+   * Funcion que se encarga de evalular si hay parametros iniciales en la configuración, si no hay parametros iniciales 
+   * crea unos por defecto
+   */
+  private managerInitConfig(){
     if (this.concurrencyConfigInput != undefined) {
       this.concurrencyConfig = this.concurrencyConfigInput
     } else {
@@ -32,6 +42,9 @@ export class ConcurrencyComponent implements OnInit {
     }
   }
 
+  /**
+   * Funcion que se encarga de salvar la configuracion
+   */
   public saveConfig() {
     this.sendData.emit(this.concurrencyConfig);
   }

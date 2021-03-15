@@ -9,8 +9,8 @@ import { ObserversService } from 'src/app/services/observers.service';
 })
 export class NameProjectComponent implements OnInit {
 
+  // Nombre del proyecto
   public nameProject = '';
-
 
   constructor(
     private jmx_service:JmeterService,
@@ -19,6 +19,9 @@ export class NameProjectComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  /**
+   * Funcion que se encarga de guardar el jmx del nombre del proyecto
+   */
   public saveConfig() {
     this.jmx_service.setNamePorjectJMX(this.nameProject);
     this.observer.setSignalChangeStatusSteps(1);

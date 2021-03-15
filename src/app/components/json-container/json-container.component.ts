@@ -11,12 +11,15 @@ import { M_GLOBAL, M_HEADER } from 'src/app/models/m.json';
 })
 export class JsonContainerComponent implements OnInit {
 
-  
+  // Señal de salida del componente
   @Output() sendJsonConfig = new EventEmitter<IJsonContainerEmit>();
+  // Obtener como hijo el componente de la libreria
   @ViewChild(JsonEditorComponent, { static: false }) editor?: JsonEditorComponent;
 
+  // variable que contiene las opciones de configuracion de la libreria
   public editorOptions: JsonEditorOptions;
 
+  // objeto json que se modifica al editar el view
   public jsonData = {}
 
   constructor() {
@@ -29,6 +32,10 @@ export class JsonContainerComponent implements OnInit {
 
   }
 
+  /**
+   * Funcion que se encarga de emitir el json generado
+   * @param event 
+   */
   public getData(event: any) {
     const data: IJsonContainerEmit = {
       data: JSON.stringify(event),
@@ -36,12 +43,21 @@ export class JsonContainerComponent implements OnInit {
     this.emitSignal(data);
   }
 
+  /**
+   * Funcion que se encarga de validar que si es un json
+   * @param data informacin generada por la libreria
+   * @returns Si es un archivo JSON returna verdadero, de lo contrario falso
+   */
   private validateIsTrusted(data: string): boolean{
     const obj = JSON.parse(data);
     if(obj.isTrusted) return true;
     else return false;
   }
 
+  /**
+   * Funcion que se encarga de enviar la data generarda
+   * @param data informacion de la libreria
+   */
   private emitSignal(data: IJsonContainerEmit) {
     if(!this.validateIsTrusted(data.data))
       this.sendJsonConfig.emit(data);

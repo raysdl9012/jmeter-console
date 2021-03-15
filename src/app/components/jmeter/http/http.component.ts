@@ -12,9 +12,10 @@ import { JmeterService } from 'src/app/services/jmeter.service';
 })
 export class HttpComponent implements OnInit {
 
-
+  // Señal de salida del componente
   @Output() sendData = new EventEmitter<string>();
 
+  // Configuracion inicial HTTP
   public httpConfig: IConfigSamplerHTTP = {
     port: 442,
     typeRequest: 'GET',
@@ -27,12 +28,20 @@ export class HttpComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  /**
+   * Funcion que se encarga de guardar la configuracion inicial HTTP
+   * genera el XML respectivo
+   */
   public saveConfig() {
     this.httpConfig.xmlHeader = this.jmx_service.getJmeterConfig().xmlHTTP_Heades;
     let xml = JMETER_FILE_SAMPLER_HTTP(this.httpConfig);
     this.sendData.emit(xml);
   }
 
+  /**
+   * Funcion que se encarga de obtener el valor del HEADER 
+   * @param event objeto que contiene la informacion del header
+   */
   public sendJsonConfig(event: IJsonContainerEmit) {
     this.httpConfig.body = event.data;
   }

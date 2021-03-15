@@ -19,6 +19,10 @@ export class ActivityComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Funcion que se encarga de generar el JMX del tipo de prueba seleccionado
+   * @param event tipo de prueba seleccionada
+   */
   public managerActivity(event: IConfigThreadGroup | IConfigConcurrency) {
     // Concurrency
     if(event.type == 1){
@@ -32,9 +36,7 @@ export class ActivityComponent implements OnInit {
       let jmx = JMETER_FILE_CREATE_THREAD_GROUP(data);
       this.jmx_service.setActivityJMX(jmx)
     }
-
     this.observer.setSignalChangeStatusSteps(3);
-    
   }
 
 }

@@ -12,6 +12,7 @@ import { ObserversService } from 'src/app/services/observers.service';
 })
 export class BodyComponent implements OnInit {
 
+  // Variable que controla el paso en el que se encuentra el aplicativo
   public stepJMeter = 0;
 
   constructor(
@@ -22,32 +23,41 @@ export class BodyComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getSignals();
+  }
 
+  /**
+   * Funcion que se encarga de suscribirse a la señal de cambio de estado
+   */
+  private getSignals(){
     this.observer.getSignalChangeStatusSteps().subscribe((step)=>{
       this.stepJMeter =  step;
     })
-
   }
 
+  /**
+   * Funcion que se encarga de crear el JMX
+   * Reelmplaza la etiqueta  <http-config> que se encuentra en el archivo raiz
+   */
   public createXML() {
     let config = this.jmx_service.getJmeterConfig();
-    
-
     if (config.xmlHTTP == undefined) {
       config.xmlActivity = config.xmlActivity!.replace('<http-config>', '');
     } else {
       config.xmlActivity = config.xmlActivity!.replace('<http-config>', config.xmlHTTP!);
     }
-    let xml = JMETER_FILE(config);
-    console.log(xml);
-    
+    let xml = JMETER_FILE(config);    
     let file = new Blob([xml])
     let name = 'jmx-' + this.makeid(4) + '.jmx';
     this._FileSaverService.save(file, name)
-
   }
 
-  makeid(length: number) {
+  /**
+   * Funcion que se encarga de generar aleatoriamente un nombre
+   * @param length valor de caracteres
+   * @returns 
+   */
+  private makeid(length: number) {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
