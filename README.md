@@ -12,7 +12,7 @@ Como resultado se generará un archivo .jmx El cual se utilizara en el software 
 ## Librerias usadas
 
 1. [JsonEditor](https://github.com/mariohmol/ang-jsoneditor) : Corresponde al visor de json para edicion
-2.[ File Saver](https://www.npmjs.com/package/file-saver) : Corresponde a la generacion del archivo y poder descargarlo.
+2. [ File Saver](https://www.npmjs.com/package/file-saver) : Corresponde a la generacion del archivo y poder descargarlo.
 
 ## Recomendacion
 
