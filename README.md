@@ -46,7 +46,7 @@ Resultado
 [tutorial2]: https://jmeter-console-tutorial.s3.amazonaws.com/Captura+de+Pantalla+2021-03-15+a+la(s)+5.13.06+p.%C2%A0m..png "Tutorial 2"
 [tutorial3]: https://jmeter-console-tutorial.s3.amazonaws.com/Captura+de+Pantalla+2021-03-15+a+la(s)+5.13.20+p.%C2%A0m..png "Tutorial 3"
 [tutorial4]: https://jmeter-console-tutorial.s3.amazonaws.com/Captura+de+Pantalla+2021-03-15+a+la(s)+5.13.38+p.%C2%A0m..png "Tutorial 4"
-[tutorial6]: https://jmeter-console-tutorial.s3.amazonaws.com/Captura+de+Pantalla+2021-03-15+a+la(s)+5.13.45+p.%C2%A0m..png "Tutorial 6"
+[tutorial5]: https://jmeter-console-tutorial.s3.amazonaws.com/Captura+de+Pantalla+2021-03-15+a+la(s)+5.13.45+p.%C2%A0m..png "Tutorial 5"
 [tutorial6]: https://jmeter-console-tutorial.s3.amazonaws.com/Captura+de+Pantalla+2021-03-15+a+la(s)+5.13.58+p.%C2%A0m..png "Tutorial 6"
 
 
