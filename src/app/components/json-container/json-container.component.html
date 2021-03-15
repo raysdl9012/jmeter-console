@@ -1,7 +1,1 @@
-<div class="card" *ngIf="jsonComponent">
-  <div class="card-body">
-    <h5 class="card-title">{{jsonComponent.title}}</h5>
-    <p class="card-text">{{jsonComponent.description}}</p>
-    <json-editor [options]="editorOptions" [data]="jsonData" (change)="getData($event)"></json-editor>
-  </div>
-</div>
+<json-editor [options]="editorOptions" [data]="jsonData" (change)="getData($event)"></json-editor>

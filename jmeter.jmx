@@ -1,40 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="dddd" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="VARIABLE" elementType="Argument">
+            <stringProp name="Argument.name">ccc</stringProp>
+            <stringProp name="Argument.value">dddd</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
     <hashTree>
-      <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="casdfasd" enabled="true">
-        <stringProp name="TestPlan.comments"></stringProp>
-        <boolProp name="TestPlan.functional_mode">false</boolProp>
-        <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
-        <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
-        <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-    <collectionProp name="Arguments.arguments">
-      <elementProp name="VARIABLE" elementType="Argument">
-      <stringProp name="Argument.name">a</stringProp>
-      <stringProp name="Argument.value">a</stringProp>
-      <stringProp name="Argument.metadata">=</stringProp>
-    </elementProp><elementProp name="VARIABLE" elementType="Argument">
-      <stringProp name="Argument.name">b</stringProp>
-      <stringProp name="Argument.value">b</stringProp>
-      <stringProp name="Argument.metadata">=</stringProp>
-    </elementProp>
-    </collectionProp>
-  </elementProp>
-        <stringProp name="TestPlan.user_define_classpath"></stringProp>
-      </TestPlan>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Thread Group" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">12</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">600</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
       <hashTree>
-    <com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup guiclass="com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroupGui" testclass="com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup" testname="Concurrencia" enabled="true">
-      <elementProp name="ThreadGroup.main_controller" elementType="com.blazemeter.jmeter.control.VirtualUserController"/>
-      <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-      <stringProp name="TargetLevel">100</stringProp>
-      <stringProp name="RampUp">600</stringProp>
-      <stringProp name="Steps">10</stringProp>
-      <stringProp name="Hold">400</stringProp>
-      <stringProp name="LogFilename"></stringProp>
-      <stringProp name="Iterations"></stringProp>
-      <stringProp name="Unit">M</stringProp>
-    </com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">12341234123</stringProp>
+          <stringProp name="HTTPSampler.port">GET</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">asdfasdfasd</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">content-type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp><elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Authorization</stringProp>
+              <stringProp name="Header.value">verr</stringProp>
+            </elementProp>
+            </collectionProp>
+          </HeaderManager>
+        </hashTree>
+      </hashTree>
     <hashTree/>
   </hashTree>
-      </hashTree>
-    </hashTree>
-  </jmeterTestPlan>
+</jmeterTestPlan>
+  

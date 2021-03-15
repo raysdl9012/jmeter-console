@@ -11,10 +11,10 @@ import { M_GLOBAL, M_HEADER } from 'src/app/models/m.json';
 })
 export class JsonContainerComponent implements OnInit {
 
-  @Input() jsonComponent?: IJsonContainer;
+  
   @Output() sendJsonConfig = new EventEmitter<IJsonContainerEmit>();
-
   @ViewChild(JsonEditorComponent, { static: false }) editor?: JsonEditorComponent;
+
   public editorOptions: JsonEditorOptions;
 
   public jsonData = {}
@@ -26,27 +26,12 @@ export class JsonContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.jsonComponent)
-      this.validateType();
-  }
 
-  private validateType() {
-    if (this.jsonComponent?.type == 1)
-      this.jsonData = M_GLOBAL();
-    if (this.jsonComponent?.type == 2)
-      this.jsonData = M_HEADER();
-
-    const data: IJsonContainerEmit = {
-      data: JSON.stringify(this.jsonData),
-      type: this.jsonComponent!.type
-    }
-    this.emitSignal(data);
   }
 
   public getData(event: any) {
     const data: IJsonContainerEmit = {
       data: JSON.stringify(event),
-      type: this.jsonComponent!.type
     };
     this.emitSignal(data);
   }
@@ -61,7 +46,4 @@ export class JsonContainerComponent implements OnInit {
     if(!this.validateIsTrusted(data.data))
       this.sendJsonConfig.emit(data);
   }
-
-
-
 }

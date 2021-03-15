@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IConfigConcurrency, IConfigThreadGroup } from 'src/app/interface/i.jmeterConfig';
 import { JMETER_FILE_CREATE_CONCURRENCE, JMETER_FILE_CREATE_THREAD_GROUP } from 'src/app/models/m.jmeter';
 import { JmeterService } from 'src/app/services/jmeter.service';
+import { ObserversService } from 'src/app/services/observers.service';
 
 @Component({
   selector: 'app-activity',
@@ -10,7 +11,10 @@ import { JmeterService } from 'src/app/services/jmeter.service';
 })
 export class ActivityComponent implements OnInit {
 
-  constructor(private jmx_service:JmeterService) { }
+  constructor(
+    private jmx_service:JmeterService,
+    private observer: ObserversService
+    ) { }
 
   ngOnInit(): void {
   }
@@ -28,6 +32,8 @@ export class ActivityComponent implements OnInit {
       let jmx = JMETER_FILE_CREATE_THREAD_GROUP(data);
       this.jmx_service.setActivityJMX(jmx)
     }
+
+    this.observer.setSignalChangeStatusSteps(3);
     
   }
 

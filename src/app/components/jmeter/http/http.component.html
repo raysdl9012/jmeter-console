@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="mb-3">
+    <label for="http-port" class="form-label">Seleccione el puerto</label>
+    <input type="number" [(ngModel)]="httpConfig.port" class="form-control" id="http-port" value="443" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Seleccione el metodo HTTP</label>
+    <select class="form-select" aria-label="Default select example"  [(ngModel)]="httpConfig.typeRequest" >
+      <option value="GET" selected>GET</option>
+      <option value="POST">POST</option>
+      <option value="PUT">PUT</option>
+      <option value="PATCH">PATCH</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="http-ip" class="form-label">Seleccione la IP o dominio</label>
+    <input type="text"  placeholder="182.12.13.23 | myservices.com" [(ngModel)]="httpConfig.url"  class="form-control" id="http-ip" value="localhost.com" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="http-endpoint" class="form-label">Seleccione el Endpoint </label>
+    <input type="text" placeholder="/v1/users" [(ngModel)]="httpConfig.endpoint"  class="form-control" id="http-endpoint" value="/v1/users" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-m3" *ngIf="httpConfig.typeRequest != 'GET'">
+    <label for="exampleFormControlTextarea1" class="form-label">Cuerpo del mensaje</label>
+    <app-json-container (sendJsonConfig)="sendJsonConfig($event)"></app-json-container>
+  </div>
+
+  <button type="button" (click)="saveConfig()" class="btn btn-primary btn-width">Guardar</button>
+</div>

@@ -1,6 +1,8 @@
-<h2>3. Seleccionar el plan de prueba</h2>
+
+<h2>4. Configuracion HTTP</h2>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Necessitatibus
   libero voluptates nulla voluptatem est. Quae adipisci assumenda, illo blanditiis aliquam accusantium facere
   necessitatibus.</p>
 
-<app-selected-activity (sendData)="managerActivity($event)"></app-selected-activity>
+<app-http-headers *ngIf="stepHTTP==0" (finishSendData)="managerHTTPHeaders()" ></app-http-headers>
+<app-http *ngIf="stepHTTP==1" (sendData)="managerHTTP($event)"></app-http>

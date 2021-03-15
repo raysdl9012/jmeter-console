@@ -16,6 +16,9 @@ import { VariablesComponent } from './components/steps/variables/variables.compo
 import { ActivityComponent } from './components/steps/activity/activity.component';
 import { SelectedActivityComponent } from './components/jmeter/selected-activity/selected-activity.component';
 import { FileSaverModule } from 'ngx-filesaver';
+import { HttpComponent } from './components/jmeter/http/http.component';
+import { HttpJmeterComponent } from './components/steps/http-jmeter/http-jmeter.component';
+import { HttpHeadersComponent } from './components/jmeter/http-headers/http-headers.component';
 
 
 
@@ -33,6 +36,9 @@ import { FileSaverModule } from 'ngx-filesaver';
     VariablesComponent,
     ActivityComponent,
     SelectedActivityComponent,
+    HttpComponent,
+    HttpJmeterComponent,
+    HttpHeadersComponent,
   ],
   imports: [
     BrowserModule,

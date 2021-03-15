@@ -1,10 +1,21 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
-      <app-name-project class="margin-components"></app-name-project>
-      <app-variables class="margin-components"></app-variables>
-      <app-activity class="margin-components"></app-activity>
-      <button type="button" (click)="createXML()" class="btn btn-primary">Guardar</button>
+
+    <div class="col-12" *ngIf="stepJMeter != 4">
+      <app-name-project *ngIf="stepJMeter == 0" class="margin-components"></app-name-project>
+      <app-variables *ngIf="stepJMeter == 1" class="margin-components"></app-variables>
+      <app-activity *ngIf="stepJMeter == 2" class="margin-components"></app-activity>
+      <app-http-jmeter *ngIf="stepJMeter == 3" class="margin-components"></app-http-jmeter>
+    </div>
+
+    <div class="col-12" *ngIf="stepJMeter == 4">
+      <div class="margin-components">
+        <h2>5. Generar JMX</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, dicta dolorem eius sed eum labore ipsum,
+          minus consequuntur blanditiis totam quam, tempore omnis saepe voluptate cumque libero temporibus voluptas.
+          Quibusdam?</p>
+        <button type="button" (click)="createXML()" class="btn btn-primary">Guardar</button>
+      </div>
     </div>
 
   </div>

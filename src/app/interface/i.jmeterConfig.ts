@@ -2,6 +2,8 @@ export interface IJmeterConfig {
   title?: string;
   xmlActivity?: string;
   xmlGlobalVariables?: string;
+  xmlHTTP?: string;
+  xmlHTTP_Heades?: string;
 }
 
 export interface IConfigConcurrency {
@@ -27,5 +29,11 @@ export  interface IConfigGlobalVariables {
 }
 
 export interface IConfigSamplerHTTP {
-  name?:  string
+  name?:  string;
+  port?: number;
+  url?: string;
+  endpoint?: string;
+  xmlHeader?: string;
+  typeRequest?: string;
+  body?: string
 }

@@ -24,3 +24,11 @@ svg{
   fill: rgb(133, 24, 24);
   cursor: pointer;
 }
+
+th{
+  text-align: center;
+}
+
+.container-no-variable{
+  margin-bottom: 10px;
+}

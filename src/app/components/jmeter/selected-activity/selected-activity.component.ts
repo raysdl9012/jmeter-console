@@ -16,12 +16,12 @@ export class SelectedActivityComponent implements OnInit {
   }
 
   public concurrencyData(event: any) {
-    const data = event as IConfigConcurrency;
+    let data = event as IConfigConcurrency;
     this.sendData.emit(data);
   }
 
   public threadGroupData(event: any) {
-    const data = event as IConfigThreadGroup;
+    let data = event as IConfigThreadGroup;
     this.sendData.emit(data);
   }
 

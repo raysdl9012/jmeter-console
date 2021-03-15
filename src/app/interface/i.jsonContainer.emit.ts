@@ -1,4 +1,4 @@
 export interface IJsonContainerEmit{
     data: string,
-    type: number
+    type?: number
 }

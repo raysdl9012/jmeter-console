@@ -1,0 +1,22 @@
+.card{
+  padding: 10px 20px;
+}
+
+.btn-width{
+  width: 85px;
+}
+
+
+.box-col{
+  display: flex;
+  flex-direction: row;
+}
+
+.box-col label{
+  margin-right: 20px;
+}
+
+textarea{
+  font-size: 11px;
+  color: rgb(8, 7, 94);
+}

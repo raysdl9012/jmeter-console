@@ -6,10 +6,9 @@ import { IJmeterConfig } from '../interface/i.jmeterConfig';
 })
 export class JmeterService {
 
-  private jmeterConfig: IJmeterConfig;
+  private jmeterConfig: IJmeterConfig = {};
 
   constructor() { 
-    this.jmeterConfig = {}
   }
 
   public setNamePorjectJMX(title: string){
@@ -22,6 +21,14 @@ export class JmeterService {
 
   public setGlobalVariblesJMX(xml: string){
     this.jmeterConfig.xmlGlobalVariables = xml;
+  }
+
+  public setHttpJMX(xml: string){
+    this.jmeterConfig.xmlHTTP = xml;
+  }
+
+  public setHttpHeadersJMX(xml: string){
+    this.jmeterConfig.xmlHTTP_Heades = xml;
   }
 
   public getJmeterConfig(): IJmeterConfig{
