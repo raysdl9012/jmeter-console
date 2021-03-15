@@ -95,7 +95,7 @@ export function JMETER_FILE_SAMPLER_HTTP(configHTTP: IConfigSamplerHTTP): string
     ${body}
     <stringProp name="HTTPSampler.domain">${configHTTP.url}</stringProp>
     <stringProp name="HTTPSampler.port">${configHTTP.port}</stringProp>
-    <stringProp name="HTTPSampler.protocol"></stringProp>
+    <stringProp name="HTTPSampler.protocol">https</stringProp>
     <stringProp name="HTTPSampler.contentEncoding"></stringProp>
     <stringProp name="HTTPSampler.path">${configHTTP.endpoint}</stringProp>
     <stringProp name="HTTPSampler.method">${configHTTP.typeRequest}</stringProp>
@@ -138,7 +138,7 @@ export function JMETER_FILE_SAMPLER_HTTP_HEADERS(list: IConfigGlobalVariables[])
     let template = JMETER_FILE_SAMPLER_HTTP_HEADERS_TEMPLATE(item);
     listTempleates += template;
   });
-  let a = ` <hashTree>
+  let a = `<hashTree>
   <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
     <collectionProp name="HeaderManager.headers">
       ${listTempleates}

@@ -33,6 +33,6 @@ export class JmeterService {
   }
 
   public getJmeterConfig(): IJmeterConfig{
-    return this.jmeterConfig
+    return this.jmeterConfig;
   }
 }

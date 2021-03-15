@@ -17,7 +17,7 @@ export class HttpComponent implements OnInit {
 
   // Configuracion inicial HTTP
   public httpConfig: IConfigSamplerHTTP = {
-    port: 442,
+    port: 443,
     typeRequest: 'GET',
     url: '',
     endpoint: '',

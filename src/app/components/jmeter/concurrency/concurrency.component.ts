@@ -37,7 +37,6 @@ export class ConcurrencyComponent implements OnInit {
         steps: 10,
         name: 'Concurrencia',
         type: 1
-
       }
     }
   }
